@@ -12,13 +12,26 @@ MASTER = "Emre"
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)  # Fixed typo: 'voices' to 'voice'
-# when we want to reduce the speed of Jarvis we want to set a three-speed rate that way Jarvis can not go fast and slow it will going to have speed normal.#
+# when we want to reduce the speed of jarvis we want to set thre speed rate that way jarvis can not go fast and slow it will going to have spped normal.#
 rate = engine.getProperty('rate')
-#now we are decreasing the speed of Jarvis #
-engine.setProperty('rate',rate  -25)
-# Now we are going to play Jarvi's loud#
+
 
 engine.setProperty('volume',7.7)
+#When we write that it will going to selcet the avvible voice that jarvis can sppeak.#
+print("Available voices:")
+#It will going to set the voice for jarvis  #
+for voice in voices:
+    print(" - Name: %s, ID: %s" % (voice.name, voice.id))
+
+#It will going to choose voice id and run the id  #
+desired_voice_id = voices[1].id
+engine.setProperty('voice', desired_voice_id)
+#now we are decresing the speed of jarvis#
+engine.setProperty('rate',rate  -25)
+# now we are going to play jarvi's loud#
+
+
+
 def speak(text):
     engine.say(text)
     engine.runAndWait()
