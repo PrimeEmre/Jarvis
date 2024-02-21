@@ -1,6 +1,3 @@
-# Jarvis
-I built a jarvis using python 
-
 import pyttsx3
 import speech_recognition as sr
 import datetime
